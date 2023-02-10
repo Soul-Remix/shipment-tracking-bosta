@@ -1,0 +1,41 @@
+.lang {
+    display: flex;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.lang:hover {
+    color: #e30613;
+    fill: #e30613;
+}
+
+.lang:hover svg {
+    transform: rotate(270deg);
+}
+
+.lang p {
+    padding: 0;
+    margin: 0;
+    font-size: medium;
+}
+
+.arrow {
+    margin: 1px 0 0 7px;
+    display: flex;
+    align-items: center;
+}
+
+.active {
+    color: #e30613;
+    fill: #e30613;
+}
+
+.active svg{
+    transform: rotate(270deg);
+}
+
+@media screen and (min-width:768px ) {
+    .lang {
+        margin-right: 40px;
+    }
+}

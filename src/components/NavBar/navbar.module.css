@@ -1,0 +1,18 @@
+.nav {
+    padding: 30px 20px 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 32px;
+    display: inline-block;
+}
+
+@media screen and (min-width: 1200px) {
+    .nav {
+        padding: 16px 70px;
+    }
+}
