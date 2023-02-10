@@ -1,19 +1,18 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import TrackingInput from "@/components/TrackingInput/TrackingInput";
-import TrackingDetail from "@/components/TrackingDetail/TrackingDetail";
-import ActivityLog from "@/components/ActivityLog/ActivityLog";
+import {queryClient} from "@/lib/react-query";
+import {QueryClientProvider} from "react-query";
+import TrackingPage from "@/pages/TrackingPage";
 
 function App() {
+
     return (
-        <div className="App">
-            <NavBar/>
-            <TrackingInput/>
-            <div className="details-container">
-                <TrackingDetail/>
-                <ActivityLog/>
+        <QueryClientProvider client={queryClient}>
+            <div>
+                <NavBar/>
+                <TrackingPage/>
             </div>
-        </div>
+        </QueryClientProvider>
     );
 }
 
