@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 16px;
+    max-width: 856px;
+}
+
+.header {
+    margin-bottom: 32px;
+    color: #667085;
+    text-align: start;
+}
