@@ -5,6 +5,7 @@
     justify-content: center;
     width: 100%;
     margin-top: 35px;
+    max-width: 856px;
 }
 
 .shipmentNum {
@@ -69,4 +70,15 @@
 .lastUpdate {
     margin-top: 8px;
     color: #667085;
+}
+
+@media screen and (min-width: 758px) {
+    .container {
+        margin-top: 96px;
+    }
+    
+    .shipmentStatus {
+        font-size: 40px;
+        line-height: 56px;
+    }
 }
