@@ -5,27 +5,41 @@ import ActivityLog from "@/features/tracking/ActivityLog/ActivityLog";
 import {useState} from "react";
 import {useQuery} from "react-query";
 import searchNum from "@/features/tracking/api/searchNum";
+import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 
 function TrackingPage() {
     const [trackingNum, setTrackingNum] = useState("");
+    const [num, setNum] = useState("");
+
     const {
         isLoading,
         isError,
         data,
         error,
         refetch,
-    } = useQuery(trackingNum, searchNum, {
-        enabled: false,
-    })
+    } = useQuery("Tracking",
+        async () => searchNum(trackingNum),
+        {enabled: false,})
 
-    const handleNumChange = (val: string) => {
+    const handleValueChange = (val: string) => {
         setTrackingNum(val);
     }
 
+    const handleSubmit = () => {
+        setNum(trackingNum);
+        refetch()
+    }
+
     return <div className={styles.container}>
-        <TrackingInput inputValue={trackingNum} onInputChange={handleNumChange} onSubmit={refetch}/>
-        <TrackingDetail/>
-        <ActivityLog/>
+        <TrackingInput inputValue={trackingNum} onInputChange={handleValueChange} onSubmit={handleSubmit}/>
+        {isError && <ErrorMessage shipmentNum={num}/>}
+        {data && <>
+            <TrackingDetail shipmentNum={data.TrackingNumber} status={data.CurrentStatus.state}
+                            message={data.CurrentStatus.state} date={data.CurrentStatus.timestamp}
+                            lastUpdate={data.CurrentStatus.timestamp}/>
+            <ActivityLog/>
+        </>}
+
     </div>
 }
 

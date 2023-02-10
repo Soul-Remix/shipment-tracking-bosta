@@ -1,10 +1,6 @@
 import {SearchNumResponse} from "@/features/tracking/types/SearchNumResponse";
 
-async function searchNum({queryKey}: any): Promise<SearchNumResponse> {
-    const [query] = queryKey;
-
-    console.log(query);
-
+async function searchNum(query: string): Promise<SearchNumResponse> {
     let res = await fetch(`https://tracking.bosta.co/shipments/track/${query}`);
     let data = await res.json();
 

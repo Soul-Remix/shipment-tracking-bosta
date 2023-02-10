@@ -60,6 +60,7 @@
 
 .statusSubHeader {
     margin-top: 4px;
+    font-size: large;
 }
 
 .statusDate {
@@ -80,5 +81,9 @@
     .shipmentStatus {
         font-size: 40px;
         line-height: 56px;
+    }
+
+    .statusSubHeader {
+        margin-top: 24px;
     }
 }

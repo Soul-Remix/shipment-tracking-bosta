@@ -1,11 +1,12 @@
 import styles from "./trackingDetail.module.css"
+import dayjs from "dayjs";
 
 interface props {
     shipmentNum: string,
     status: string,
     message: string,
-    date: string,
-    lastUpdate: string
+    date: Date,
+    lastUpdate: Date,
 }
 
 function TrackingDetail({shipmentNum, status, message, date, lastUpdate}: props) {
@@ -18,8 +19,8 @@ function TrackingDetail({shipmentNum, status, message, date, lastUpdate}: props)
             <hr className={styles.statusDivider}/>
         </div>
         <div className={`${styles.statusSubHeader} ${styles.subHeader}`}>{message}<span
-            className={styles.statusDate}>{date}</span></div>
-        <div className={styles.lastUpdate}>(Last update since {lastUpdate})</div>
+            className={styles.statusDate}>{dayjs(date).format("ddd, DD MMM YYYY")}</span></div>
+        <div className={styles.lastUpdate}>(Last update since {dayjs(lastUpdate).fromNow()})</div>
         <hr className={styles.divider}/>
     </div>
 }
