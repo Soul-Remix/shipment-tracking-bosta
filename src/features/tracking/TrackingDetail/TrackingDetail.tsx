@@ -14,9 +14,10 @@ function TrackingDetail({shipmentNum, status, message, date, lastUpdate}: props)
         <div className={`${styles.shipmentNum} ${styles.subHeader}`}>Shipment No. {shipmentNum}</div>
         <div className={styles.shipmentStatus}>{status}</div>
         <div className={styles.status}>
-            <hr className={styles.statusDivider}/>
             <hr className={`${styles.statusDivider} ${styles.active}`}/>
-            <hr className={styles.statusDivider}/>
+            <hr className={`${styles.statusDivider} ${styles.active}`}/>
+            {status === "DELIVERED" ? <hr className={`${styles.statusDivider} ${styles.active}`}/> :
+                <hr className={styles.statusDivider}/>}
         </div>
         <div className={`${styles.statusSubHeader} ${styles.subHeader}`}>{message}<span
             className={styles.statusDate}>{dayjs(date).format("ddd, DD MMM YYYY")}</span></div>
