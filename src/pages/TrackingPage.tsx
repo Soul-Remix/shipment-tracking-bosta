@@ -35,6 +35,10 @@ function TrackingPage() {
   };
 
   const handleSubmit = () => {
+    if (trackingNum.length === 0) {
+      return;
+    }
+
     let currentUrlParams = new URLSearchParams(window.location.search);
     currentUrlParams.set("shipmentTracking", trackingNum);
     history.pushState(
