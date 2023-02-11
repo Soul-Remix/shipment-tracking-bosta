@@ -51,7 +51,7 @@ function LangSelector() {
         }}
       >
         {languages.map((x) => (
-          <MenuItem onClick={() => handleChangeLocale(x.lang)}>
+          <MenuItem key={x.lang} onClick={() => handleChangeLocale(x.lang)}>
             {x.title}
           </MenuItem>
         ))}

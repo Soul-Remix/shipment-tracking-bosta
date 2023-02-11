@@ -9,7 +9,7 @@ function NavBar() {
 
   return (
     <nav className={styles.nav}>
-      <a className={styles.logo} href="#">
+      <a className={styles.logo} href="/">
         {i18n.language === "en" ? <Logo /> : <LogoArabic />}
       </a>
       <LangSelector />

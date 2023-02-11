@@ -2,19 +2,32 @@ import styles from "./trackingPage.module.css";
 import TrackingInput from "@/features/tracking/TrackingInput/TrackingInput";
 import TrackingDetail from "@/features/tracking/TrackingDetail/TrackingDetail";
 import ActivityLog from "@/features/tracking/ActivityLog/ActivityLog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import searchNum from "@/features/tracking/api/searchNum";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import LoadingModal from "@/components/LoadingModal/LoadingModal";
+import useGetQueryParams from "@/hooks/useGetQueryParams";
 
 function TrackingPage() {
-  const [trackingNum, setTrackingNum] = useState("");
+  const params = useGetQueryParams();
+
+  console.log(params["shipmentTracking"]);
+
+  const [trackingNum, setTrackingNum] = useState(
+    params["shipmentTracking"] ?? ""
+  );
   const [num, setNum] = useState("");
 
-  const { isLoading, isError, data, error, refetch } = useQuery(
+  useEffect(() => {
+    if (trackingNum !== "") {
+      refetch();
+    }
+  }, []);
+
+  const { isLoading, isError, data, refetch } = useQuery(
     "Tracking",
-    async () => searchNum(trackingNum),
+    async () => await searchNum(trackingNum),
     { enabled: false }
   );
 
@@ -23,6 +36,13 @@ function TrackingPage() {
   };
 
   const handleSubmit = () => {
+    let currentUrlParams = new URLSearchParams(window.location.search);
+    currentUrlParams.set("shipmentTracking", trackingNum);
+    history.pushState(
+      history.state,
+      "",
+      window.location.pathname + "?" + currentUrlParams.toString()
+    );
     setNum(trackingNum);
     refetch();
   };
@@ -35,7 +55,7 @@ function TrackingPage() {
         onSubmit={handleSubmit}
       />
       {isError && <ErrorMessage shipmentNum={num} />}
-      {data && (
+      {data && !isError && (
         <>
           <TrackingDetail
             shipmentNum={data.TrackingNumber}
