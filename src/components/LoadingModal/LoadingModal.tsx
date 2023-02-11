@@ -10,7 +10,7 @@ function LoadingModal({ isOpen }: props) {
       sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
       open={isOpen}
     >
-      <CircularProgress color="inherit" />
+      <CircularProgress color="info" />
     </Backdrop>
   );
 }
