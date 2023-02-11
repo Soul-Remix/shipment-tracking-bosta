@@ -1,97 +1,97 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 35px;
-    max-width: 856px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 35px;
+  max-width: 856px;
 }
 
 .shipmentNum {
-    color: #667085;
+  color: #667085;
 }
 
 .shipmentStatus {
-    font-size: 28px;
-    line-height: 36px;
-    font-weight: bold;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: bold;
 }
 
 .divider {
-    width: 100%;
-    background-color: #e4e7ec;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    height: 2px;
-    border: 0;
+  width: 100%;
+  background-color: #e4e7ec;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  height: 2px;
+  border: 0;
 }
 
 .status {
-    display: flex;
-    gap: 5px;
-    width: 100%;
-    margin-top: 24px;
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  margin-top: 24px;
 }
 
 .statusDivider {
-    display: inline-block;
-    width: 100%;
-    height: 6px;
-    border: unset;
-    background-color: #d9f4f8;
+  display: inline-block;
+  width: 100%;
+  height: 6px;
+  border: unset;
+  background-color: #d9f4f8;
 }
 
-.status hr:first-child:dir(ltr) {
-    border-radius: 64px 0 0 64px;
+.status hr:first-child[dir="ltr"] {
+  border-radius: 64px 0 0 64px;
 }
 
-.status hr:first-child:dir(rtl) {
-    border-radius: 0 64px 64px 0;
+.status hr:first-child[dir="rtl"] {
+  border-radius: 0 64px 64px 0;
 }
 
-.status hr:last-child:dir(ltr) {
-    border-radius: 0 64px 64px 0;
+.status hr:last-child[dir="ltr"] {
+  border-radius: 0 64px 64px 0;
 }
 
-.status hr:last-child:dir(rtl) {
-    border-radius: 64px 0 0 64px;
+.status hr:last-child[dir="rtl"] {
+  border-radius: 64px 0 0 64px;
 }
 
 .active {
-    background-color: #0098a5;
+  background-color: #0098a5;
 }
 
 .subHeader {
-    font-size: 17px;
-    line-height: 24px;
+  font-size: 17px;
+  line-height: 24px;
 }
 
 .statusSubHeader {
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 .statusDate {
-    margin-left: 4px;
-    color: #0098a5;
+  margin-left: 4px;
+  color: #0098a5;
 }
 
 .lastUpdate {
-    margin-top: 8px;
-    color: #667085;
+  margin-top: 8px;
+  color: #667085;
 }
 
 @media screen and (min-width: 758px) {
-    .container {
-        margin-top: 96px;
-    }
-    
-    .shipmentStatus {
-        font-size: 40px;
-        line-height: 56px;
-    }
+  .container {
+    margin-top: 96px;
+  }
 
-    .statusSubHeader {
-        margin-top: 24px;
-    }
+  .shipmentStatus {
+    font-size: 40px;
+    line-height: 56px;
+  }
+
+  .statusSubHeader {
+    margin-top: 24px;
+  }
 }

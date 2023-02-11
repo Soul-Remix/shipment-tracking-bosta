@@ -27,6 +27,8 @@ function LangSelector() {
     handleClose();
   };
 
+  const dir = i18n.language === "en" ? "ltr" : "rtl";
+
   return (
     <div>
       <button
@@ -37,7 +39,7 @@ function LangSelector() {
         aria-expanded={isActive ? "true" : undefined}
       >
         {i18n.language === "en" ? "EN" : "عربي"}
-        <span className={styles.arrow}>
+        <span className={styles.arrow} dir={dir}>
           <DownArrow />
         </span>
       </button>

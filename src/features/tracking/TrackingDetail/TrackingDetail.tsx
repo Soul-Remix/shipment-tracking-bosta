@@ -17,7 +17,8 @@ function TrackingDetail({
   date,
   lastUpdate,
 }: props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const dir = i18n.language === "en" ? "ltr" : "rtl";
 
   return (
     <div className={styles.container}>
@@ -26,13 +27,14 @@ function TrackingDetail({
       </div>
       <div className={styles.shipmentStatus}>{t(status)}</div>
       <div className={styles.status}>
+        <hr className={`${styles.statusDivider} ${styles.active}`} dir={dir} />
         <hr className={`${styles.statusDivider} ${styles.active}`} />
-        <hr className={`${styles.statusDivider} ${styles.active}`} />
-        {status === "DELIVERED" ? (
-          <hr className={`${styles.statusDivider} ${styles.active}`} />
-        ) : (
-          <hr className={styles.statusDivider} />
-        )}
+        <hr
+          className={`${styles.statusDivider} ${
+            status === "DELIVERED" ? styles.active : ""
+          }`}
+          dir={dir}
+        />
       </div>
       <div className={`${styles.statusSubHeader} ${styles.subHeader}`}>
         {t("statusMessage" + message)}{" "}

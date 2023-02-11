@@ -11,7 +11,9 @@ function ErrorMessage({ shipmentNum }: props) {
 
   return (
     <div>
-      <div className={styles.shipmentNum}>Shipment No. {shipmentNum}</div>
+      <div className={styles.shipmentNum}>
+        {t("shipmentNum")} {shipmentNum}
+      </div>
       <div className={styles.container}>
         <Error />
         <p>{t("errorMessage")}</p>

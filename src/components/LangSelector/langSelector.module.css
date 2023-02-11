@@ -1,49 +1,50 @@
 .lang {
-    display: flex;
-    cursor: pointer;
-    margin-right: 20px;
-    font-size: 16px;
-    background-color: transparent;
-    border: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 0;
 }
 
 .lang:hover {
-    color: #e30613;
-    fill: #e30613;
+  color: #e30613;
+  fill: #e30613;
 }
 
 .lang:hover svg {
-    transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 .lang p {
-    padding: 0;
-    margin: 0;
-    font-weight: bold;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
 }
 
 .arrow {
-    margin: 1px 0 0 7px;
-    display: flex;
-    align-items: center;
-    fill:"#98A2B3";
+  margin: 1px 0 0 7px;
+  display: flex;
+  align-items: center;
+  fill: "#98A2B3";
 }
 
-.arrow:dir(rtl) {
-    margin-right: 8px;
+.arrow[dir="rtl"] {
+  margin-right: 8px;
 }
 
 .active {
-    color: #e30613;
-    fill: #e30613;
+  color: #e30613;
+  fill: #e30613;
 }
 
 .active svg {
-    transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
-@media screen and (min-width: 768px ) {
-    .lang {
-        margin-right: 40px;
-    }
+@media screen and (min-width: 768px) {
+  .lang {
+    margin-right: 40px;
+  }
 }

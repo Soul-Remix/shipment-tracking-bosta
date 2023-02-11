@@ -10,7 +10,8 @@ interface props {
 }
 
 function TrackingInput({ onInputChange, inputValue, onSubmit }: props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const dir = i18n.language == "en" ? "ltr" : "rtl";
 
   const handleEnterKey = (key: string) => {
     if (key === "Enter") {
@@ -28,12 +29,14 @@ function TrackingInput({ onInputChange, inputValue, onSubmit }: props) {
           value={inputValue}
           onChange={(event) => onInputChange(event.currentTarget.value)}
           onKeyPress={(g) => handleEnterKey(g.key)}
+          dir={dir}
         />
         <button
           className={styles.button}
           onClick={onSubmit}
           type="submit"
           aria-label="Search"
+          dir={dir}
         >
           <Search />
         </button>
