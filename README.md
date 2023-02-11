@@ -1,7 +1,8 @@
 # Shipment Tracking
 
 A website to track shipment sent using bosta    
-Built using React and CSS module written in TypeScript 
+Built using React and CSS module written in TypeScript  
+Utilized Vitest framework to add unit tests to ensure code robustness and a more secure software development flow
 
 [Live Page](https://soul-remix.github.io/shipment-tracking-bosta/)
 
@@ -16,3 +17,4 @@ Built using React and CSS module written in TypeScript
 - React i18next
 - dayjs
 - MUI for the timeline component
+- Vitest
