@@ -12,10 +12,10 @@ interface Props {
 }
 
 function TimeLineComponent({ date, events }: Props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
-    <div>
+    <div className={styles.rightAlign}>
       <p className={styles.header}>{dayjs(date).format("ddd, DD MMM")}</p>
       {events.map((item, i) => (
         <div className={styles.box} key={item.event + i}>

@@ -26,6 +26,11 @@
     margin: 1px 0 0 7px;
     display: flex;
     align-items: center;
+    fill:"#98A2B3";
+}
+
+.arrow:dir(rtl) {
+    margin-right: 8px;
 }
 
 .active {

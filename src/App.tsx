@@ -8,6 +8,8 @@ import { createTheme, ThemeProvider } from "@mui/material";
 
 import "@/lib/il8n";
 import { useTranslation } from "react-i18next";
+import "dayjs/locale/ar";
+import { useEffect, useState } from "react";
 
 dayjs.extend(relativeTime);
 
@@ -18,15 +20,26 @@ const theme = createTheme({
 });
 
 function App() {
+  const [direction, setDirection] = useState("ltr");
   const { i18n } = useTranslation();
 
-  dayjs.locale(i18n.language);
+  useEffect(() => {
+    dayjs.locale(i18n.language);
+    document.documentElement.lang = i18n.language;
+    if (i18n.language === "ar") {
+      setDirection("rtl");
+    } else {
+      setDirection("ltr");
+    }
+  }, [i18n.language]);
 
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <NavBar />
-        <TrackingPage />
+        <div dir={direction}>
+          <NavBar />
+          <TrackingPage />
+        </div>
       </ThemeProvider>
     </QueryClientProvider>
   );

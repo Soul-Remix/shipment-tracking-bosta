@@ -35,7 +35,7 @@ function TrackingDetail({
         )}
       </div>
       <div className={`${styles.statusSubHeader} ${styles.subHeader}`}>
-        {t("statusMessage" + message)}
+        {t("statusMessage" + message)}{" "}
         <span className={styles.statusDate}>
           {dayjs(date).format("ddd, DD MMM YYYY")}
         </span>

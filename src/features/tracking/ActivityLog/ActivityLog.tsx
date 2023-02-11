@@ -12,6 +12,7 @@ import styles from "./activityLog.module.css";
 import TimeLineComponent from "@/components/TimeLineComponent/TimeLineComponent";
 import { TransitEvents } from "@/features/tracking/types/TransitEvents";
 import groupTransitEvents from "../util/groupTransitEvents";
+import { t } from "i18next";
 
 interface props {
   transitEvents: Array<TransitEvents>;
@@ -25,7 +26,7 @@ function ActivityLog({ transitEvents }: props) {
 
   return (
     <div className={styles.container}>
-      <p>ACTIVITY LOG</p>
+      <p>{t("activityLog")}</p>
       <Timeline
         sx={{
           [`& .${timelineItemClasses.root}:before`]: {
