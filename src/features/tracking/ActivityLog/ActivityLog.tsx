@@ -19,10 +19,9 @@ interface props {
 }
 
 function ActivityLog({ transitEvents }: props) {
-  const groupedEvents = useMemo(
-    () => groupTransitEvents(transitEvents).reverse(),
-    [transitEvents]
-  );
+  const groupedEvents = useMemo(() => {
+    return groupTransitEvents(transitEvents);
+  }, [transitEvents]);
 
   return (
     <div className={styles.container}>
@@ -36,14 +35,14 @@ function ActivityLog({ transitEvents }: props) {
         }}
       >
         {groupedEvents.length > 0 &&
-          groupedEvents.map((x, i) => (
+          groupedEvents.reverse().map((x, i) => (
             <TimelineItem key={i}>
               <TimelineSeparator>
                 <TimelineDot />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <TimeLineComponent date={x.date} events={x.events} />
+                <TimeLineComponent date={x.date} events={x.events.reverse()} />
               </TimelineContent>
             </TimelineItem>
           ))}

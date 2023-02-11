@@ -16,6 +16,7 @@ export const ARABIC = {
   OUT_FOR_DELIVERY_EVENT: "جاري تسليم الأوردر",
   NOT_YET_SHIPPED_EVENT: "يتم تجهيز الأوردر للتسليم.",
   WAITING_FOR_CUSTOMER_ACTION_EVENT: "تم تأجيل التسليم",
+  RECEIVED_DELIVERY_LOCATION_EVENT: "تم استلام موقع التسليم",
   DELIVERED_EVENT: "تم تسليم الأوردر",
   DELIVERED_TO_SENDER: "تم إرجاعه",
   DELIVERED: "تم تسليم الأوردر",

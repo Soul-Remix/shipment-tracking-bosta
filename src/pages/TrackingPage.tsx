@@ -8,11 +8,10 @@ import searchNum from "@/features/tracking/api/searchNum";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import LoadingModal from "@/components/LoadingModal/LoadingModal";
 import useGetQueryParams from "@/hooks/useGetQueryParams";
+import FooterImage from "@/assets/FooterImage";
 
 function TrackingPage() {
   const params = useGetQueryParams();
-
-  console.log(params["shipmentTracking"]);
 
   const [trackingNum, setTrackingNum] = useState(
     params["shipmentTracking"] ?? ""
@@ -67,6 +66,7 @@ function TrackingPage() {
           <ActivityLog transitEvents={data.TransitEvents} />
         </>
       )}
+      {data === undefined && <FooterImage />}
       <LoadingModal isOpen={isLoading} />
     </div>
   );

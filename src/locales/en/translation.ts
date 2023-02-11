@@ -19,6 +19,7 @@ export const ENGLISH = {
   NOT_YET_SHIPPED_EVENT: "Order is being prepared for delivery.",
   WAITING_FOR_CUSTOMER_ACTION_EVENT: "Order is rescheduled",
   DELIVERED_EVENT: "Order is Delivered",
+  RECEIVED_DELIVERY_LOCATION_EVENT: "Delivery location is received",
   DELIVERED_TO_SENDER: "Returned",
   DELIVERED: "Delivered",
 
