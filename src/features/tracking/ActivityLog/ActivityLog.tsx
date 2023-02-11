@@ -35,8 +35,8 @@ function ActivityLog({ transitEvents }: props) {
         }}
       >
         {groupedEvents.length > 0 &&
-          groupedEvents.map((x) => (
-            <TimelineItem>
+          groupedEvents.map((x, i) => (
+            <TimelineItem key={i}>
               <TimelineSeparator>
                 <TimelineDot />
                 <TimelineConnector />
