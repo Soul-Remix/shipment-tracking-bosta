@@ -1,5 +1,6 @@
 import styles from "./timeLineComponent.module.css";
 import dayjs from "dayjs";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   date: Date;
@@ -11,13 +12,16 @@ interface Props {
 }
 
 function TimeLineComponent({ date, events }: Props) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <p className={styles.header}>{dayjs(date).format("ddd, DD MMM")}</p>
       {events.map((item, i) => (
         <div className={styles.box} key={item.event + i}>
-          <p>{item.event}</p>
-          {item.hub !== undefined && <p>{item.hub}</p>}
+          <p>
+            {t(item.event + "_EVENT")} {item.hub !== undefined && item.hub}
+          </p>
           <p className={styles.boxDate}>{dayjs(item.time).format("hh:mm A")}</p>
         </div>
       ))}
