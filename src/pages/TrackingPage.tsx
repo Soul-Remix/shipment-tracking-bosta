@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import searchNum from "@/features/tracking/api/searchNum";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
+import LoadingModal from "@/components/LoadingModal/LoadingModal";
 
 function TrackingPage() {
   const [trackingNum, setTrackingNum] = useState("");
@@ -46,6 +47,7 @@ function TrackingPage() {
           <ActivityLog transitEvents={data.TransitEvents} />
         </>
       )}
+      <LoadingModal isOpen={isLoading} />
     </div>
   );
 }
