@@ -1,3 +1,5 @@
+import {TransitEvents} from "@/features/tracking/types/TransitEvents";
+
 export interface SearchNumResponse {
     "provider": string,
     "CurrentStatus": {
@@ -10,11 +12,6 @@ export interface SearchNumResponse {
     "SupportPhoneNumbers": [
         string
     ],
-    "TransitEvents": Array<{
-        "state": string,
-        "timestamp": Date,
-        "hub": string,
-        reason: string
-    }>,
+    "TransitEvents": Array<TransitEvents>,
     "CreateDate": Date
 }
