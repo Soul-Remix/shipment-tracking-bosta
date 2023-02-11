@@ -70,7 +70,7 @@ function TrackingPage() {
           <ActivityLog transitEvents={data.TransitEvents} />
         </>
       )}
-      {data === undefined && (
+      {data === undefined && !isError && (
         <div className={styles.footer}>
           <FooterImage />
         </div>

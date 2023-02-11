@@ -1,7 +1,7 @@
 const FooterImage = () => {
   return (
     <svg
-      width="350"
+      width="400"
       height="588"
       viewBox="0 0 627 588"
       fill="none"
