@@ -29,7 +29,12 @@ function TrackingInput({ onInputChange, inputValue, onSubmit }: props) {
           onChange={(event) => onInputChange(event.currentTarget.value)}
           onKeyPress={(g) => handleEnterKey(g.key)}
         />
-        <button className={styles.button} onClick={onSubmit} type="submit">
+        <button
+          className={styles.button}
+          onClick={onSubmit}
+          type="submit"
+          aria-label="Search"
+        >
           <Search />
         </button>
       </div>
