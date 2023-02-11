@@ -70,7 +70,11 @@ function TrackingPage() {
           <ActivityLog transitEvents={data.TransitEvents} />
         </>
       )}
-      {data === undefined && <FooterImage />}
+      {data === undefined && (
+        <div className={styles.footer}>
+          <FooterImage />
+        </div>
+      )}
       <LoadingModal isOpen={isLoading} />
     </div>
   );
