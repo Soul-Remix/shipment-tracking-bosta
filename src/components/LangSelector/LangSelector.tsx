@@ -30,13 +30,14 @@ function LangSelector() {
   const dir = i18n.language === "en" ? "ltr" : "rtl";
 
   return (
-    <div>
+    <div data-testid="lang-selector">
       <button
         className={`${isActive ? styles.active : ""} ${styles.lang}`}
         onClick={handleClick}
         aria-controls={isActive ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={isActive ? "true" : undefined}
+        data-testid="lang-selector-button"
       >
         {i18n.language === "en" ? "EN" : "عربي"}
         <span className={styles.arrow} dir={dir}>

@@ -8,7 +8,7 @@ function NavBar() {
   const { i18n } = useTranslation();
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} data-testid="navBar">
       <a
         className={styles.logo}
         href="/shipment-tracking-bosta/"

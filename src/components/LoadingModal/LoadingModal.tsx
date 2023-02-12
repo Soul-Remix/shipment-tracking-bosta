@@ -9,6 +9,7 @@ function LoadingModal({ isOpen }: props) {
     <Backdrop
       sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
       open={isOpen}
+      data-testid="loadingModal"
     >
       <CircularProgress color="info" />
     </Backdrop>

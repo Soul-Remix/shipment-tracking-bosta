@@ -10,8 +10,8 @@ function ErrorMessage({ shipmentNum }: props) {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <div className={styles.shipmentNum}>
+    <div data-testid="errorMessage">
+      <div className={styles.shipmentNum} data-testid="shipmentNum">
         {t("shipmentNum")} {shipmentNum}
       </div>
       <div className={styles.container}>

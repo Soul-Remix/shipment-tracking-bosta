@@ -7,7 +7,7 @@ interface Props {
   events: Array<{
     time: Date;
     event: string;
-    hub?: string;
+    hub: string | undefined;
   }>;
 }
 
@@ -17,7 +17,11 @@ function TimeLineComponent({ date, events }: Props) {
   const dir = i18n.language === "en" ? "ltr" : "rtl";
 
   return (
-    <div className={styles.rightAlign} dir={dir}>
+    <div
+      className={styles.rightAlign}
+      dir={dir}
+      data-testid="time-line-component"
+    >
       <p className={styles.header}>{dayjs(date).format("ddd, DD MMM")}</p>
       {events.map((item, i) => (
         <div className={styles.box} key={item.event + i}>
