@@ -7,7 +7,7 @@ interface Props {
   events: Array<{
     time: Date;
     event: string;
-    hub: string | undefined;
+    hub?: string;
   }>;
 }
 
