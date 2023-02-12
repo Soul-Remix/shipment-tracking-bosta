@@ -11,6 +11,15 @@ Utilized Vitest framework to add unit tests to ensure code robustness and a more
 - support both english and arabic, with the ability to add more languages
 - Full score in Lighthouse
 
+## How To Run
+- git clone https://github.com/Soul-Remix/shipment-tracking-bosta.git
+- cd shipment-tracking-bosta
+- npm install
+- npm run dev
+
+## To Run Tests
+- npm run test    
+
 ## Libraries
 - React
 - React Query
