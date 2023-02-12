@@ -51,7 +51,7 @@ function TrackingPage() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="tracking-page">
       <TrackingInput
         inputValue={trackingNum}
         onInputChange={handleValueChange}

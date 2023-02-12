@@ -30,6 +30,7 @@ function TrackingInput({ onInputChange, inputValue, onSubmit }: props) {
           onChange={(event) => onInputChange(event.currentTarget.value)}
           onKeyPress={(g) => handleEnterKey(g.key)}
           dir={dir}
+          data-testid="tracking-input"
         />
         <button
           className={styles.button}
@@ -37,6 +38,7 @@ function TrackingInput({ onInputChange, inputValue, onSubmit }: props) {
           type="submit"
           aria-label="Search"
           dir={dir}
+          data-testid="tracking-button"
         >
           <Search />
         </button>

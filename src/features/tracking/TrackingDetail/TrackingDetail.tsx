@@ -21,7 +21,7 @@ function TrackingDetail({
   const dir = i18n.language === "en" ? "ltr" : "rtl";
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="tracking-detail">
       <div className={`${styles.shipmentNum} ${styles.subHeader}`}>
         {t("shipmentNum")} {shipmentNum}
       </div>
